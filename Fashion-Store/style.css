@@ -1,19 +1,334 @@
 /* Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-body {
-    font-family: 'Poppins', sans-serif;
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    padding-top: 75px;
+    font-family: 'Poppins', sans-serif;
 }
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Login Page Styles */
+:root {
+    --primary-color: #e83e8c;
+    --primary-dark: #d63384;
+    --secondary-color: #6c757d;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --white: #ffffff;
+    --black: #000000;
+    --google-red: #DB4437;
+    --facebook-blue: #4267B2;
+}
+
+.login-wrapper {
+    display: flex;
+    height: 100vh;
+}
+
+.fashion-side {
+    flex: 1;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.brand-overlay {
+    position: absolute;
+    bottom: 80px;
+    left: 60px;
+    color: var(--white);
+    text-align: left;
+}
+
+.brand-overlay h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.brand-overlay p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: var(--white);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.login-side {
+    width: 450px;
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 350px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.logo i {
+    margin-right: 10px;
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: var(--dark-color);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.subtitle {
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--secondary-color);
+    font-size: 1rem;
+}
+
+.form-group .toggle-password {
+    left: auto;
+    right: 15px;
+    cursor: pointer;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(232, 62, 140, 0.2);
+    outline: none;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 0.85rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.remember-me input {
+    margin-right: 8px;
+    accent-color: var(--primary-color);
+}
+
+.forgot-password {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: var(--primary-color);
+}
+
+.login-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.login-btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(232, 62, 140, 0.3);
+}
+
+/* Divider */
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 25px 0;
+    color: var(--secondary-color);
+    font-size: 0.8rem;
+}
+
+.divider::before, .divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.divider::before {
+    margin-right: 10px;
+}
+
+.divider::after {
+    margin-left: 10px;
+}
+
+.social-login {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.social-btn {
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #e0e0e0;
+    background-color: var(--white);
+}
+
+.social-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.social-btn.google {
+    color: var(--google-red);
+}
+
+.social-btn.google:hover {
+    border-color: var(--google-red);
+    background-color: rgba(219, 68, 55, 0.05);
+}
+
+.social-btn.facebook {
+    color: var(--facebook-blue);
+}
+
+.social-btn.facebook:hover {
+    border-color: var(--facebook-blue);
+    background-color: rgba(66, 103, 178, 0.05);
+}
+
+.signup-text {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+.signup-text a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.signup-text a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: #dc3545;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+.animated-form {
+    animation: fadeInUp 0.8s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 
 /* Navigation */
 nav {
     width: 100%;
-    height: 6vh;
+    height: 10vh;
     position: fixed;
     top: 0;
     background: #ffffff;
@@ -81,12 +396,29 @@ nav {
 }
 
 .nav-links a:hover {
-    color: #007bff;
+    color: #e83e8c;
+}
+
+ /* Hamburger menu styles */
+ .hamburger {
+    display: none;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.hamburger i {
+    color: #ff85b3;
+    font-size: 28px;
 }
 
 
 
 /* Upcoming Sales Section */
+.fake-navbar{
+    height: 10vh;
+    background-color: rgb(255, 255, 255);
+}
+
 .sales {
     display: flex;
     justify-content: center;
@@ -268,11 +600,11 @@ nav {
 .modern-box {
     width: 400px;
     height: 390px;
-    aspect-ratio: 1 / 1.1; /* Maintain width-height proportion */
+    aspect-ratio: 1 / 1.1;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
     cursor: pointer;
-    overflow: hidden; /* Prevent any image overflow */
+    overflow: hidden;
 }
 
 .modern-box img {
@@ -434,6 +766,9 @@ nav {
     margin: 0;
 }
 
+.name{
+    margin-left: 12em;
+}
 .social-icons a {
     color: #fff;
     margin-left: 10px;
@@ -442,47 +777,88 @@ nav {
 }
 
 .social-icons a:hover {
-    color: #f52967;
+    color: #e83e8c;
 }
 
 
 /* Responsive Design  for Tablets*/
 @media (max-width: 768px) {
 
+    /* Login page */
+    .login-wrapper {
+        flex-direction: column;
+    }
+    
+    .fashion-side {
+        display: none;
+    }
+    
+    .login-side {
+        width: 100%;
+        height: 100vh;
+    }
+
     /* Navigation Bar */
     nav {
-        height: auto;
+        height: 18vh;
         flex-direction: column;
         align-items: flex-start;
         padding: 0.5rem;
     }
 
     .search-box {
-        width: 100%;
+        width: 80%;
         margin-top: 10px;
     }
     .search-box input {
         width: 90%;
     }
     .search-box button {
-        width: 6%;
+        width: 10%;
         margin-right: 1.5rem;
     }
     .nav-links {
-        display: none;
-                                /* nav-links ar hamburger menu ta korta hobe */
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 220px;
+        height: 100vh;
+        background-color: rgb(255, 255, 255);
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding-top: 70px;
+        padding-left: 30px;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        transition: left 0.3s ease;
+        z-index: 99;
+    }
+    .nav-links.active {
+        left: 0;
+    }
+    .nav-links li {
+        margin: 15px 0;
+    }
+    
+    .hamburger {
+        display: block;
+        order: 2;
+        position: relative;
+        top: -80px;
+        margin-left: auto;
     }
     
     /* Sales Section */
+    .sales {
+        margin-top: 50px;
+    }
     .sales-container {
         width: 95%;
     }
     .sale-banner {
         border-radius: 8px;
     }
-    .sales {
-        margin-top: 15px;
-    }
+    
 
     /* Product Showcase Section */
     .products h2 {
@@ -521,30 +897,29 @@ nav {
 
     /* New Arrival Section */
     .arrival {
-        margin-block: 3.5rem; /* Reduced margin for better spacing */
+        margin-block: 3.5rem;
     }
 
     .all-arrivals {
-        width: 95%; /* Slightly smaller width */
-        border-radius: 15px; /* Softer corners */
+        width: 95%;
+        border-radius: 15px;
     }
 
 
     /* Modern Collection */
     .modern-store h2 {
-        font-size: 1.8rem; /* Reduce heading size */
+        font-size: 1.8rem;
         margin: 2rem 0;
     }
 
     .modern-container {
-        gap: 15px; /* Reduce spacing */
+        gap: 15px;
         margin-bottom: 2.5rem;
     }
 
     .modern-box {
-        width: 320px; /* Reduce box width */
-        /* height: 320px; Reduce box height */
-        aspect-ratio: 1 / 1.1; /* Keeps images proportional */
+        width: 320px;
+        aspect-ratio: 1 / 1.1;
     }
 
     /* Benefit Section */
@@ -603,14 +978,22 @@ nav {
         text-align: center;
         gap: 20px;
     }
+    .name{
+        position: relative;
+        right: 75px;
+    }
 }
 
 /* Responsive Design for Small Screens */
 @media (max-width: 480px) {
 
     /* Navigation Bar */
+    nav{
+        box-shadow: none;
+    }
+
     .brand {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
 
     .search-box {
@@ -619,14 +1002,17 @@ nav {
     }
 
     .search-box button {
-        width: 9%;
+        width: 12%;
         margin-right: 1.2rem;
     }
 
+    .nav-links {
+        width: 50%;
+    }
 
     /* Sales Section */
     .sales {
-        margin-top: 20px;
+        margin-top: 50px;
     }
     .sales-container {
         width: 98%;
@@ -670,30 +1056,29 @@ nav {
 
     /* New Arrival Section */
     .arrival {
-        margin-block: 2.5rem; /* Further reduced margin */
+        margin-block: 2.5rem;
     }
 
     .all-arrivals {
-        width: 90%; /* Adjusted for smaller screens */
+        width: 90%;
         border-radius: 12px;
     }
 
     /* Modern Collection */
     .modern-store h2 {
-        font-size: 1.6rem; /* Further reduce heading size */
+        font-size: 1.6rem;
         margin: 1.8rem 0;
     }
 
     .modern-container {
-        flex-direction: column; /* Stack boxes vertically */
+        flex-direction: column;
         align-items: center;
-        gap: 10px; /* Reduce gap */
+        gap: 10px;
     }
 
     .modern-box {
-        width: 90%; /* Make it almost full-width */
-        /* height: 390px; Adjust height */
-        aspect-ratio: 1 / 1.1; /* Maintain proportions */
+        width: 90%;
+        aspect-ratio: 1 / 1.1;
 
     }
 
@@ -775,5 +1160,9 @@ nav {
     .social-icons a {
         font-size: 16px;
         margin: 5px;
+    }
+    .name{
+        position: relative;
+        right: 75px;
     }
 }
